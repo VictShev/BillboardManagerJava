@@ -20,7 +20,7 @@ public class BillboardManagerTest {
     }
 
     @Test
-    public void findLastOfSeven() {
+    public void findWhenItLessThanLimit() {
         BillboardManager manager = new BillboardManager();
         manager.add("Бладшот");
         manager.add("Вперед");
@@ -34,8 +34,9 @@ public class BillboardManagerTest {
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void findLastOfTwelve() {
+    public void findWhenItBiggerThanLimit() {
         BillboardManager manager = new BillboardManager();
         manager.add("Бладшот");
         manager.add("Вперед");

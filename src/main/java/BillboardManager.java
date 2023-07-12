@@ -1,5 +1,10 @@
 public class BillboardManager {
     private String[] movies = new String[0];
+    private int limit;
+
+    public BillboardManager() {
+        this.limit = 10;
+    }
 
     public void add(String movie) {
         String[] tmp = new String[movies.length + 1];
@@ -16,14 +21,14 @@ public class BillboardManager {
 
     public String[] findLast() {
         int resultLength;
-        if (movies.length < 10) {
+        if (movies.length < limit) {
             resultLength = movies.length;
-        }else{
-            resultLength = 10;
+        } else {
+            resultLength = limit;
         }
         String[] tmp = new String[resultLength];
         for (int i = 0; i < tmp.length; i++) {
-            tmp[i] = movies[movies.length -1 -i];
+            tmp[i] = movies[movies.length - 1 - i];
         }
         return tmp;
     }
